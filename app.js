@@ -12,10 +12,11 @@ app.directive("abFileInput",function(){
             //if form is valid render img preview
             if(ngCtrl.$valid){
 
+                //render img for file preview
                 var file = ngCtrl.$modelValue;
-
                 var fileRenderer = new FileReader();
                 fileRenderer.addEventListener("load",function(ev){
+                    //apply change on scope so scope is refreshed, else waits for next event to $digest
                     scope.$apply(function(){
                         scope.abPicPreview = ev.target.result;
                         
@@ -23,6 +24,7 @@ app.directive("abFileInput",function(){
                     
                 });
 
+                //read selected file
                 fileRenderer.readAsDataURL(file);
 
                 
@@ -74,8 +76,7 @@ app.directive("abFileInput",function(){
         //function that executes on file change
         function fileChange(){
 
-            var file = el[0].files[0];
-
+            var file = el[0].files[0];  //get file
             ngCtrl.$setViewValue(file);
         }
     };
