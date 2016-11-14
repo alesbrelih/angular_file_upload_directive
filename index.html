@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .img-wrapper{
+                display:block;
+                width:50%;
+                margin:50px auto auto auto;
+
+            }
+            img{
+                max-width:100%;
+            }
+        </style>
+    </head>
+    <body ng-app="fileUploadApp">
+        
+        <div class="main-content" ng-controller="FileCtrl as vm">
+
+            <h1>{{vm.title}}</h1>
+
+            <form novalidate>
+                <input type="file" ng-model="vm.file" ab-file-input ab-pic-preview="vm.picPreview">
+                <input type="submit" value="Submit file" ng-click="vm.submitFile()">
+            </form>
+
+            <div class="img-wrapper"><img ng-src="{{vm.picPreview}}" alt="Currently no picture"></div>
+
+
+        </div>
+    
+    <script src="app.b.js">
+        
+    </script>
+    </body>
+</html>

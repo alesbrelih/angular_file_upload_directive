@@ -1,0 +1,19 @@
+{
+  "name": "file-upload-validation-angular-js",
+  "version": "1.0.0",
+  "description": "File upload implementation in angular.",
+  "main": "app.js",
+  "scripts": {
+    "test": "browserify app.js -o app.b.js"
+  },
+  "keywords": [
+    "angular",
+    "file",
+    "upload"
+  ],
+  "author": "Aleš Brelih",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
